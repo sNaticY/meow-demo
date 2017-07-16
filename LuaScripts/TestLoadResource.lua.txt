@@ -1,0 +1,47 @@
+--
+-- Created by IntelliJ IDEA.
+-- User: snatic
+-- Date: 2017/7/15
+-- Time: 上午2:04
+-- To change this template use File | Settings | File Templates.
+--
+
+--
+-- <代码文件解释说明>
+--
+local function classTestController()
+    local self = {}
+
+    ---- 成员变量 ----
+
+    ---- 成员函数 前置声明 ----
+
+    ---- 成员函数 ----
+
+    function self.Awake()
+
+    end
+
+    function self.Start()
+        local resLoader = MainGame.GetResourceLoader(self.behaviour.ProjectName)
+        self.loadPrefabOp = resLoader:LoadGameObject("Assets/Demo/Prefabs/CanvasUI.prefab")
+    end
+
+    function self.Update()
+        if self.loadPrefabOp.IsDone then
+            local go = self.loadPrefabOp.Asset
+            GameObject.Instantiate(go)
+        end
+    end
+
+    function self.OnDestroy()
+    end
+
+    ---- END
+
+    return self
+end
+
+return classTestController
+
+
