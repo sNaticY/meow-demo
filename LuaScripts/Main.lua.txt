@@ -1,10 +1,8 @@
---主入口函数。从这里开始lua逻辑
-Color = CS.UnityEngine.Color
-MainGame = CS.Meow.Framework.MainGame
-GameObject = CS.UnityEngine.GameObject
-
-local function Main()
-	print("Hello MeowFramework")
+-- 主入口函数。从这里开始lua逻辑
+function main(projectName)
+    ProjectName = projectName
+    MainGame = CS.Meow.Framework.MainGame
+    LuaHelper = MainGame.GetLuaHelper(projectName)
 end
 
-Main()
+return main

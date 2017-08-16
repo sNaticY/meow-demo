@@ -1,0 +1,29 @@
+--
+-- <代码文件解释说明>
+--
+
+local function classTestLuaController()
+    local self = {}
+
+    ---- 成员变量 ----
+
+    ---- 成员函数 前置声明 ----
+
+    local _onDownloadButtonClicked
+
+    ---- 成员函数 ----
+
+    function self.Start()
+        LuaHelper:AddClick(self.exitButton, _onDownloadButtonClicked)
+    end
+
+    function _onDownloadButtonClicked()
+        self.mainGame:ReturnToEntrance("Assets/MeowDemo/Scenes/00Entrance.unity")
+    end
+
+    ---- END
+
+    return self
+end
+
+return classTestLuaController
